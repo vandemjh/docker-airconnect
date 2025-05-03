@@ -7,7 +7,7 @@ if [ -z "$AIRUPNP_VAR" ]; then
   exec /usr/bin/airupnp-docker -Z -l 1000:2000
 elif [ "$AIRUPNP_VAR" = "kill" ]; then
   echo "[AirConnect-AIRUPNP] AIRUPNP_VAR set to kill, skipping AIRUPNP service launch"
-  exit 0
+  exec sleep infinity
 else
   echo "[AirConnect-AIRUPNP] AIRUPNP_VAR is present, launching with custom launch variables: $AIRUPNP_VAR"
   exec /usr/bin/airupnp-docker -Z $AIRUPNP_VAR
